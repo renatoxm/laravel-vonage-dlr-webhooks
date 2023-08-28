@@ -4,7 +4,6 @@ namespace Renatoxm\LaravelVonageDlrWebhooks\Http\Controllers;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Renatoxm\LaravelVonageDlrWebhooks\Events\LaravelVonageDlrWebhooksCalled;
 
@@ -12,7 +11,6 @@ class LaravelVonageDlrWebhooksController extends Controller
 {
     public function __invoke(Request $request): JsonResponse
     {
-
         $model = config('laravel-vonage-dlr-webhooks.log.model');
 
         $vonageWebhookData['err_code'] = $request->input('err-code');

@@ -13,6 +13,7 @@ class CreateVonageDlrWebhookLogsTable extends Migration
     {
         $this->table_name = config('laravel-vonage-dlr-webhooks.log.table_name', config('laravel-vonage-dlr-webhooks.log.table'));
     }
+
     /**
      * Run the migrations.
      */
@@ -41,4 +42,3 @@ class CreateVonageDlrWebhookLogsTable extends Migration
         Schema::dropIfExists($this->table_name);
     }
 }
-;

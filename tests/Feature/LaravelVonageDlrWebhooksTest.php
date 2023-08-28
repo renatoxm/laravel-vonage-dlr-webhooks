@@ -17,7 +17,6 @@ class LaravelVonageDlrWebhooksTest extends TestCase
         parent::setUp();
 
         Event::fake();
-
     }
 
     protected function validPayload($attributes = [])
@@ -31,7 +30,7 @@ class LaravelVonageDlrWebhooksTest extends TestCase
             'price' => '0,04870000',
             'scts' => '2308251154',
             'status' => 'delivered',
-            'to' => '5521993415455'
+            'to' => '5521993415455',
         ], $attributes);
     }
 
@@ -47,7 +46,7 @@ class LaravelVonageDlrWebhooksTest extends TestCase
             'price' => '0,04870000',
             'scts' => '2308251154',
             'status' => 'delivered',
-            'to' => '5521993415455'
+            'to' => '5521993415455',
         ];
 
         $response = $this->postJson('/api/webhooks/vonage/dlr', $payload);
@@ -56,7 +55,7 @@ class LaravelVonageDlrWebhooksTest extends TestCase
 
         $this->assertCount(1, LaravelVonageDlrWebhooksModel::all());
 
-        tap(LaravelVonageDlrWebhooksModel::first(), function ($log) use ($payload) {
+        tap(LaravelVonageDlrWebhooksModel::first(), function ($log) {
             $this->assertEquals('0', $log->err_code);
             $this->assertEquals('2023-08-25 16:54:36', $log->message_timestamp);
             $this->assertEquals('d679f9e5-6f1e-494b-91f1-22c7d131aaad', $log->message_id);
@@ -66,7 +65,6 @@ class LaravelVonageDlrWebhooksTest extends TestCase
             $this->assertEquals('2308251154', $log->scts);
             $this->assertEquals('delivered', $log->status);
             $this->assertEquals('5521993415455', $log->to);
-
         });
 
         Event::assertDispatched(LaravelVonageDlrWebhooksCalled::class, function ($event) {
@@ -76,7 +74,7 @@ class LaravelVonageDlrWebhooksTest extends TestCase
         });
 
         Event::assertDispatched('webhook.vonage: delivered', function ($event, $eventPayload) {
-            if (!$eventPayload instanceof LaravelVonageDlrWebhooksCalled) {
+            if (! $eventPayload instanceof LaravelVonageDlrWebhooksCalled) {
                 return false;
             }
 
@@ -109,5 +107,4 @@ class LaravelVonageDlrWebhooksTest extends TestCase
         $response->assertStatus(204);
         $this->assertCount(0, LaravelVonageDlrWebhooksModel::all());
     }
-
 }

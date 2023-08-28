@@ -27,11 +27,12 @@ class LaravelVonageDlrWebhooksServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/laravel-vonage-dlr-webhooks.php', 'laravel-vonage-dlr-webhooks');
+        $this->mergeConfigFrom(__DIR__.'/../config/laravel-vonage-dlr-webhooks.php', 'laravel-vonage-dlr-webhooks');
     }
 
     /**
-     * Summary of registerRoutes
+     * Summary of registerRoutes.
+     *
      * @return void
      */
     private function registerRoutes(): void
@@ -40,29 +41,31 @@ class LaravelVonageDlrWebhooksServiceProvider extends ServiceProvider
     }
 
     /**
-     * Summary of registerMigrations
+     * Summary of registerMigrations.
+     *
      * @return void
      */
     private function registerMigrations(): void
     {
         if ($this->app->runningInConsole() && $this->shouldMigrate()) {
-            $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+            $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         }
     }
 
     /**
-     * Summary of registerPublishing
+     * Summary of registerPublishing.
+     *
      * @return void
      */
     private function registerPublishing(): void
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../config/laravel-vonage-dlr-webhooks.php' => config_path('laravel-vonage-dlr-webhooks.php'),
+                __DIR__.'/../config/laravel-vonage-dlr-webhooks.php' => config_path('laravel-vonage-dlr-webhooks.php'),
             ], 'config');
 
             $this->publishes([
-                __DIR__ . '/../database/migrations' => database_path('migrations'),
+                __DIR__.'/../database/migrations' => database_path('migrations'),
             ], 'migrations');
         }
     }
@@ -78,12 +81,12 @@ class LaravelVonageDlrWebhooksServiceProvider extends ServiceProvider
     }
 
     /**
-     * Summary of shouldMigrate
+     * Summary of shouldMigrate.
+     *
      * @return bool
      */
     protected function shouldMigrate(): bool
     {
         return config('laravel-vonage-dlr-webhooks.log.enabled');
     }
-
 }

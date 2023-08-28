@@ -37,12 +37,12 @@ class LaravelVonageDlrWebhooksTest extends TestCase
             'price' => '0,04870000',
             'scts' => '2308251154',
             'status' => 'delivered',
-            'to' => '5521993415455'
+            'to' => '5521993415455',
         ]);
 
         $this->assertCount(1, LaravelVonageDlrWebhooksModel::all());
 
-        tap(LaravelVonageDlrWebhooksModel::first(), function ($webhook) use ($payload) {
+        tap(LaravelVonageDlrWebhooksModel::first(), function ($webhook) {
             $this->assertEquals('d679f9e5-6f1e-494b-91f1-22c7d131aaad', $webhook->message_id);
             $this->assertEquals('delivered', $webhook->status);
         });
@@ -60,18 +60,16 @@ class LaravelVonageDlrWebhooksTest extends TestCase
             'price' => '0,04870000',
             'scts' => '2308251154',
             'status' => 'delivered',
-            'to' => '5521993415455'
+            'to' => '5521993415455',
         ];
 
         LaravelVonageDlrWebhooksModel::createOrNewFromPayload($payload);
 
         $this->assertCount(1, LaravelVonageDlrWebhooksModel::all());
-        tap(LaravelVonageDlrWebhooksModel::first(), function ($webhook) use ($payload) {
-
+        tap(LaravelVonageDlrWebhooksModel::first(), function ($webhook) {
             $this->assertEquals('d679f9e5-6f1e-494b-91f1-22c7d131aaad', $webhook->message_id);
             $this->assertEquals('delivered', $webhook->status);
             $this->assertEquals('5521993415455', $webhook->to);
-
         });
     }
 
@@ -89,7 +87,7 @@ class LaravelVonageDlrWebhooksTest extends TestCase
             'price' => '0,04870000',
             'scts' => '2308251154',
             'status' => 'delivered',
-            'to' => '5521993415455'
+            'to' => '5521993415455',
         ];
 
         $webhook = LaravelVonageDlrWebhooksModel::createOrNewFromPayload($payload);

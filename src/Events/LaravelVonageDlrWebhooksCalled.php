@@ -2,11 +2,8 @@
 
 namespace Renatoxm\LaravelVonageDlrWebhooks\Events;
 
-use Ramsey\Uuid\Type\Decimal;
-
 class LaravelVonageDlrWebhooksCalled
 {
-
     public $err_code;
     public $message_timestamp;
     public $message_id;

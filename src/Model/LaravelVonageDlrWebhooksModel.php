@@ -1,10 +1,10 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Renatoxm\LaravelVonageDlrWebhooks\Model;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Str;
 
 class LaravelVonageDlrWebhooksModel extends Model
 {
@@ -18,7 +18,7 @@ class LaravelVonageDlrWebhooksModel extends Model
 
     public function __construct(array $attributes = [])
     {
-        if (!isset($this->table)) {
+        if (! isset($this->table)) {
             $this->setTable(config('laravel-vonage-dlr-webhooks.log.table_name'));
         }
 
@@ -38,10 +38,10 @@ class LaravelVonageDlrWebhooksModel extends Model
             'price' => $payload->get('price'),
             'scts' => $payload->get('scts'),
             'status' => $payload->get('status'),
-            'to' => $payload->get('to')
+            'to' => $payload->get('to'),
         ]);
 
-        if (config('laravel-vonage-dlr-webhooks.log.enabled') && !collect(config('laravel-vonage-dlr-webhooks.log.except'))->contains($payload->get('status'))) {
+        if (config('laravel-vonage-dlr-webhooks.log.enabled') && ! collect(config('laravel-vonage-dlr-webhooks.log.except'))->contains($payload->get('status'))) {
             $model->save();
         }
 
