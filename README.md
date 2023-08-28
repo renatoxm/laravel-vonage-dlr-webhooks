@@ -1,9 +1,10 @@
 # LaravelVonageDlrWebhooks
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
+[![Software License][ico-license]](LICENSE.md)
+[![Tests][ico-tests]][link-tests]
+[![StyleCI][ico-style-ci]][link-style-ci]
 [![Total Downloads][ico-downloads]][link-downloads]
-[![Build Status][ico-travis]][link-travis]
-[![StyleCI][ico-styleci]][link-styleci]
 
 Handle [Vonage](https://developer.vonage.com/en/messaging/sms/guides/delivery-receipts) DLR (delivery receipt) SMS webhooks in Laravel php framework. Take a look at [contributing.md](contributing.md) to see a to do list.
 
@@ -66,12 +67,13 @@ This package is highly inspired by:
 MIT. Please see the [license file](LICENSE.md) for more information.
 
 [ico-version]: https://img.shields.io/packagist/v/renatoxm/laravel-vonage-dlr-webhooks.svg?style=flat-square
+[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
+[ico-tests]: https://img.shields.io/github/actions/workflow/status/renatoxm/laravel-vonage-dlr-webhooks/tests.yml?branch=main
+[ico-style-ci]: https://styleci.io/repos/682953332/shield?branch=main
 [ico-downloads]: https://img.shields.io/packagist/dt/renatoxm/laravel-vonage-dlr-webhooks.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/renatoxm/laravel-vonage-dlr-webhooks/master.svg?style=flat-square
-[ico-styleci]: https://styleci.io/repos/12345678/shield
 [link-packagist]: https://packagist.org/packages/renatoxm/laravel-vonage-dlr-webhooks
+[link-tests]: https://github.com/renatoxm/laravel-vonage-dlr-webhooks/actions/workflows/tests.yml
+[link-style-ci]: https://styleci.io/repos/682953332
 [link-downloads]: https://packagist.org/packages/renatoxm/laravel-vonage-dlr-webhooks
-[link-travis]: https://travis-ci.org/renatoxm/laravel-vonage-dlr-webhooks
-[link-styleci]: https://styleci.io/repos/12345678
 [link-author]: https://github.com/renatoxm
 [link-contributors]: ../../contributors
