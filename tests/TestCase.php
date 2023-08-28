@@ -2,8 +2,8 @@
 
 namespace Renatoxm\LaravelVonageDlrWebhooks\Tests;
 
-use Renatoxm\LaravelVonageDlrWebhooks\LaravelVonageDlrWebhooksServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
+use Renatoxm\LaravelVonageDlrWebhooks\LaravelVonageDlrWebhooksServiceProvider;
 
 abstract class TestCase extends Orchestra
 {

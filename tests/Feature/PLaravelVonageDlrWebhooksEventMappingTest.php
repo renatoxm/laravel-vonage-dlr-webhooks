@@ -29,7 +29,7 @@ class PLaravelVonageDlrWebhooksEventMappingTest extends TestCase
             'price' => '0,04870000',
             'scts' => '2308251154',
             'status' => 'delivered',
-            'to' => '5521993415455'
+            'to' => '5521993415455',
         ], $attributes);
     }
 
@@ -43,7 +43,7 @@ class PLaravelVonageDlrWebhooksEventMappingTest extends TestCase
         ]));
 
         Event::assertDispatched(MappedFakeEvent::class, function ($event) {
-            if (!$event->webhook instanceof LaravelVonageDlrWebhooksCalled) {
+            if (! $event->webhook instanceof LaravelVonageDlrWebhooksCalled) {
                 return false;
             }
 
