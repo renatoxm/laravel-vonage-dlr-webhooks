@@ -1,0 +1,76 @@
+{
+  "name": "renatoxm/laravel-vonage-dlr-webhooks",
+  "description": "Handle delivery receipt SMS webhooks in Laravel php framework",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Renato XM",
+      "email": "renatoxm@gmail.com",
+      "homepage": "https://github.com/renatoxm",
+      "role": "Developer"
+    }
+  ],
+  "homepage": "https://github.com/renatoxm/laravel-vonage-dlr-webhooks",
+  "keywords": [
+    "laravel",
+    "vonage",
+    "sms",
+    "event",
+    "webhook"
+  ],
+  "require": {
+    "php": "^8.1",
+    "illuminate/http": "^9.34 || ^10.0",
+    "illuminate/support": "^9.34 || ^10.0",
+    "guzzlehttp/guzzle": "^7.2",
+    "vonage/client-core": "^4.1"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^7.12 || ^8.0",
+    "phpunit/phpunit": "^9.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Renatoxm\\LaravelVonageDlrWebhooks\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Renatoxm\\LaravelVonageDlrWebhooks\\Tests\\": "tests",
+      "Workbench\\App\\": "workbench/app/",
+      "Workbench\\Database\\Factories\\": "workbench/database/factories/",
+      "Workbench\\Database\\Seeders\\": "workbench/database/seeders/"
+    }
+  },
+  "config": {
+    "sort-packages": true,
+    "preferred-install": "dist"
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit",
+    "test:coverage": "vendor/bin/phpunit --coverage-clover=coverage.xml",
+    "post-autoload-dump": [
+      "@clear",
+      "@prepare"
+    ],
+    "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
+    "prepare": "@php vendor/bin/testbench package:discover --ansi",
+    "build": "@php vendor/bin/testbench workbench:build --ansi",
+    "serve": [
+      "@build",
+      "@php vendor/bin/testbench serve"
+    ]
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Renatoxm\\LaravelVonageDlrWebhooks\\LaravelVonageDlrWebhooksServiceProvider"
+      ],
+      "aliases": {
+        "LaravelVonageDlrWebhooks": "Renatoxm\\LaravelVonageDlrWebhooks\\Facades\\LaravelVonageDlrWebhooks"
+      }
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
