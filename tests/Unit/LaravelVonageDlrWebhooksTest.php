@@ -1,6 +1,6 @@
 <?php
 
-namespace Renatoxm\LaravelVonageDlrWebhooks\Tests\Database;
+namespace Renatoxm\LaravelVonageDlrWebhooks\Tests\Unit;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Renatoxm\LaravelVonageDlrWebhooks\Model\LaravelVonageDlrWebhooksModel;
