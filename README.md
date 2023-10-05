@@ -50,7 +50,7 @@ Under SMS settings, choose SMS API, set the webhook format to `POST-JSON`, and c
 
 ## Events
 
-Whenever a webhook call comes in, this package will fire a `LaravelVonageDlrWebhookCalled` event.  
+Whenever a webhook call comes in, this package will fire a `LaravelVonageDlrWebhooksCalled` event.  
 You may register an event listener in the `EventServiceProvider`:
 
 ```php
@@ -60,7 +60,7 @@ You may register an event listener in the `EventServiceProvider`:
  * @var array
  */
 protected $listen = [
-    LaravelVonageDlrWebhookCalled::class => [
+    LaravelVonageDlrWebhooksCalled::class => [
         YourListener::class,
     ],
 ];
@@ -73,17 +73,17 @@ Example of a listener:
 
 namespace App\Listeners;
 
-use Renatoxm\LaravelVonageDlrWebhooks\Events\LaravelVonageDlrWebhookCalled;
+use Renatoxm\LaravelVonageDlrWebhooks\Events\LaravelVonageDlrWebhooksCalled;
 
 class YourListener
 {
     /**
      * Handle the event.
      *
-     * @param  \Renatoxm\LaravelVonageDlrWebhooks\Events\LaravelVonageDlrWebhookCalled  $event
+     * @param  \Renatoxm\LaravelVonageDlrWebhooks\Events\LaravelVonageDlrWebhooksCalled  $event
      * @return void
      */
-    public function handle(LaravelVonageDlrWebhookCalled $event)
+    public function handle(LaravelVonageDlrWebhooksCalled $event)
     {
         // Do your work here.
         // $event->err_code
