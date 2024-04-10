@@ -1,0 +1,20 @@
+includes:
+    - phpstan-baseline.neon
+
+parameters:
+    level: 5
+    paths:
+        - src
+        - config
+        - database
+    tmpDir: build/phpstan
+    # checkOctaneCompatibility: true
+    # checkModelProperties: true
+    checkMissingIterableValueType: true
+    reportUnmatchedIgnoredErrors: false
+
+    ignoreErrors:
+        - '#Unsafe usage of new static#'
+
+        # For MediaLibraryPro dependencies
+        - "#MediaLibraryPro\\\\#"

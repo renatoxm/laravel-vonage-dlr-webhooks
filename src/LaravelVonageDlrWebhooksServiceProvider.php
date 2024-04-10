@@ -10,8 +10,6 @@ class LaravelVonageDlrWebhooksServiceProvider extends ServiceProvider
 {
     /**
      * Perform post-registration booting of services.
-     *
-     * @return void
      */
     public function boot(): void
     {
@@ -22,8 +20,6 @@ class LaravelVonageDlrWebhooksServiceProvider extends ServiceProvider
 
     /**
      * Register any package services.
-     *
-     * @return void
      */
     public function register(): void
     {
@@ -32,8 +28,6 @@ class LaravelVonageDlrWebhooksServiceProvider extends ServiceProvider
 
     /**
      * Summary of registerRoutes.
-     *
-     * @return void
      */
     private function registerRoutes(): void
     {
@@ -42,8 +36,6 @@ class LaravelVonageDlrWebhooksServiceProvider extends ServiceProvider
 
     /**
      * Summary of registerMigrations.
-     *
-     * @return void
      */
     private function registerMigrations(): void
     {
@@ -54,8 +46,6 @@ class LaravelVonageDlrWebhooksServiceProvider extends ServiceProvider
 
     /**
      * Summary of registerPublishing.
-     *
-     * @return void
      */
     private function registerPublishing(): void
     {
@@ -82,8 +72,6 @@ class LaravelVonageDlrWebhooksServiceProvider extends ServiceProvider
 
     /**
      * Summary of shouldMigrate.
-     *
-     * @return bool
      */
     protected function shouldMigrate(): bool
     {

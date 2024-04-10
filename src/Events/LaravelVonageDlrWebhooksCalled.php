@@ -5,13 +5,21 @@ namespace Renatoxm\LaravelVonageDlrWebhooks\Events;
 class LaravelVonageDlrWebhooksCalled
 {
     public $err_code;
+
     public $message_timestamp;
+
     public $message_id;
+
     public $msisdn;
+
     public $network_code;
+
     public $price;
+
     public $scts;
+
     public $status;
+
     public $to;
 
     public function __construct($err_code, $message_timestamp, $message_id, $msisdn, $network_code, $price, $scts, $status, $to)

@@ -18,9 +18,7 @@ class LaravelVonageDlrWebhooksModel extends Model
 
     public function __construct(array $attributes = [])
     {
-        if (! isset($this->table)) {
-            $this->setTable(config('laravel-vonage-dlr-webhooks.log.table_name'));
-        }
+        $this->setTable(config('laravel-vonage-dlr-webhooks.log.table_name'));
 
         parent::__construct($attributes);
     }
@@ -29,7 +27,7 @@ class LaravelVonageDlrWebhooksModel extends Model
     {
         $payload = collect($payload);
 
-        $model = (new static )->forceFill([
+        $model = (new static)->forceFill([
             'err_code' => $payload->get('err_code'),
             'message_timestamp' => $payload->get('message_timestamp'),
             'message_id' => $payload->get('message_id'),
