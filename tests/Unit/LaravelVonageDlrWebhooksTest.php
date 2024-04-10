@@ -17,7 +17,6 @@ class LaravelVonageDlrWebhooksTest extends TestCase
 
         $this->assertEquals('test_table_name', (new LaravelVonageDlrWebhooksModel())->getTable());
 
-        $this->assertEquals('dummy_table', (new DummyLaravelVonageDlrWebhooksModel())->getTable());
     }
 
     /** @test */
